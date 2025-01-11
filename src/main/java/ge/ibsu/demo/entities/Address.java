@@ -14,6 +14,10 @@ public class Address {
     @Column(name = "address")
     private String address;
 
+    @ManyToOne
+    @JoinColumn(name = "city_id")
+    private City city;
+
     public Long getId() {
         return id;
     }
@@ -28,5 +32,13 @@ public class Address {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 }
